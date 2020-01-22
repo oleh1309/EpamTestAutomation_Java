@@ -13,21 +13,30 @@ import epam.Controller.Controller;
 
 import java.util.*;
 
-public class EnterNameView {
+public class EnterNameView extends View implements Printable{
   /**
    * Controller where we start using option of mvc.
    */
-  private Controller controller;
+
   private static Scanner input = new Scanner(System.in);
-  private Map<Integer,Player> listOfPlayer;
   private GameView gameView;
+  private boolean isGameStarted;
 
   public EnterNameView() {
-    controller = new ControllerImpl();
-    listOfPlayer = new LinkedHashMap<>();
+
     addPlayer();
     controller.showPlayers();
-    gameView = new GameView();
+
+    System.out.println("Throwing a dice");
+    try {
+      controller.animate_roll();
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+    print(controller.roll());
+    isGameStarted = true;
+    controller.play(isGameStarted);
+    new GameView();
   }
 
   private void addPlayer(){
@@ -36,7 +45,11 @@ public class EnterNameView {
       System.out.println("Enter name " + i + " :");
       controller.addPlayers(i,input.next());
       i++;
-    }while (controller.getListSize()!=4);
+    }while (controller.getList()!=4);
+  }
+  @Override
+  public <T> void print(T t) {
+    System.out.println(t);
   }
 
 }

@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="less3_oop_part2" />
         <module name="less3_oop_part1" />
+        <module name="less5_logging" />
         <module name="less4_exception" />
       </profile>
     </annotationProcessing>

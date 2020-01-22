@@ -1,0 +1,10 @@
+2020-01-21 19:40:04,749 DEBUG Application [main] the built-in DEBUG level
+2020-01-21 19:40:04,750 INFO Application [main] the built-in INFO level
+2020-01-21 19:40:04,750 WARN Application [main] the built-in WARN level
+2020-01-21 19:40:04,750 ERROR Application [main] the built-in ERROR level
+2020-01-21 19:40:04,750 FATAL Application [main] the built-in FATAL level
+2020-01-21 23:26:40,445 DEBUG Application [main] the built-in DEBUG level
+2020-01-21 23:26:40,447 INFO Application [main] the built-in INFO level
+2020-01-21 23:26:40,447 WARN Application [main] the built-in WARN level
+2020-01-21 23:26:40,447 ERROR Application [main] the built-in ERROR level
+2020-01-21 23:26:40,447 FATAL Application [main] the built-in FATAL level

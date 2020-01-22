@@ -13,15 +13,15 @@ public class ListPlayer {
     }
 
     public void addPlayer(int key, String name) {
-        list.put(key, new Player(name));
+        this.list.put(key, new Player(name));
     }
 
     public void showPlayers() {
         list.forEach((key, value) -> System.out.println(key + ":" + value));
     }
 
-    public int listSize(){
-        return list.size();
+    public Map getList(){
+        return list;
     }
 
 

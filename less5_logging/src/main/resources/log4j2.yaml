@@ -1,0 +1,76 @@
+Configuration:
+  status: warn
+  name: YAMLConfigTest
+  properties:
+    property:
+      name: test-yaml.log
+      value: logs
+  thresholdFilter:
+    level: all
+
+  appenders:
+    Console:
+      name: STDOUT
+      PatternLayout:
+        Pattern: "%m%n"
+    File:
+    -
+      name: File1
+      fileName: logs/file_debug.log
+
+      PatternLayout:
+        Pattern: "%d %p %C{1.} [%t] %m%n"
+      Filters:
+        ThresholdFilter:
+          level: debug
+    -
+      name: File2
+      fileName: logs/file_info.log
+      PatternLayout:
+        Pattern: "%d %p %C{1.} [%t] %m%n"
+      Filters:
+        ThresholdFilter:
+          level: info
+
+    RollingFile:
+      name: Roll
+      fileName: logs/app.log
+      filePattern: logs/archive/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz
+      PatternLayout:
+        Pattern: "%d %p %c{1.} [%t] %m%n"
+      Policies:
+        TimeBasedTriggeringPolicy:
+          interval: 1
+          modulate: true
+#          SizeBasedTriggeringPolicy:
+#            size: 1 MB
+
+  Loggers:
+    logger:
+      -
+        name: Game
+        level: debug
+        additivity: false
+        AppenderRef:
+          -
+            ref: STDOUT
+          -
+            ref: File2
+      -
+        name: Application
+        level: all
+        additivity: false
+        AppenderRef:
+          -
+            ref: STDOUT
+#          -
+#            ref: File1
+          -
+            ref: Roll
+
+    Root:
+      level: debug
+      AppenderRef:
+        - ref: STDOUT
+        - ref: File
+        - ref: Roll

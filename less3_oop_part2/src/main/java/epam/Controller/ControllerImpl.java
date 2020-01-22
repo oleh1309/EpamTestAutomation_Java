@@ -4,6 +4,8 @@ package epam.Controller;
 import epam.Model.BusinessLogic;
 import epam.Model.Model;
 
+import java.util.Map;
+
 
 /**
  * ControllerImpl update info on the view page.
@@ -23,7 +25,7 @@ public class ControllerImpl implements Controller {
 
   @Override
   public void showPlayers() {
-    model.getList();
+    model.showList();
   }
 
   @Override
@@ -32,8 +34,8 @@ public class ControllerImpl implements Controller {
   }
 
   @Override
-  public int getListSize() {
-    return model.getListSize();
+  public int getList() {
+     return model.getList();
   }
 
   @Override
@@ -45,4 +47,11 @@ public class ControllerImpl implements Controller {
   public int roll() {
     return model.roll();
   }
+
+  @Override
+  public void play(boolean isGameStarted) {
+    model.play(isGameStarted);
+  }
+
+
 }
