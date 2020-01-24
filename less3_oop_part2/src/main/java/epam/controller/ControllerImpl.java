@@ -1,10 +1,8 @@
-package epam.Controller;
+package epam.controller;
 
 
-import epam.Model.BusinessLogic;
-import epam.Model.Model;
-
-import java.util.Map;
+import epam.model.BusinessLogic;
+import epam.model.Model;
 
 
 /**
@@ -29,8 +27,8 @@ public class ControllerImpl implements Controller {
   }
 
   @Override
-  public void addPlayers(int key, String name) {
-    model.addPlayers(key, name);
+  public void addPlayers(String name) {
+    model.addPlayers(name);
   }
 
   @Override

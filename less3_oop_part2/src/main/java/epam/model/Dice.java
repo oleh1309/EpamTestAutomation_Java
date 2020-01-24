@@ -1,4 +1,4 @@
-package epam.Model;
+package epam.model;
 
 import java.util.Random;
 

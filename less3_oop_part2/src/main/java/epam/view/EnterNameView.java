@@ -1,25 +1,22 @@
 /**
  * Copyright notice filename: View.java.
  */
-package epam.View;
+package epam.view;
 /**
  * <h1>MyView</h1>
  * Class is building by Map
  */
-
-import epam.Controller.ControllerImpl;
-import epam.Model.Player;
-import epam.Controller.Controller;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.*;
 
-public class EnterNameView extends View implements Printable{
+public class EnterNameView extends View{
   /**
    * Controller where we start using option of mvc.
    */
-
-  private static Scanner input = new Scanner(System.in);
-  private GameView gameView;
+  private static final Logger logger = LogManager.getLogger(EnterNameView.class);
+  //private static Scanner input = new Scanner(System.in);
   private boolean isGameStarted;
 
   public EnterNameView() {
@@ -31,25 +28,22 @@ public class EnterNameView extends View implements Printable{
     try {
       controller.animate_roll();
     } catch (InterruptedException e) {
-      e.printStackTrace();
+      logger.error(e);
     }
-    print(controller.roll());
+    logger.info(controller.roll());
     isGameStarted = true;
     controller.play(isGameStarted);
-    new GameView();
+
   }
 
   private void addPlayer(){
     int i = 1;
     do{
       System.out.println("Enter name " + i + " :");
-      controller.addPlayers(i,input.next());
+      controller.addPlayers(new Scanner(System.in).next());
       i++;
     }while (controller.getList()!=4);
   }
-  @Override
-  public <T> void print(T t) {
-    System.out.println(t);
-  }
+
 
 }

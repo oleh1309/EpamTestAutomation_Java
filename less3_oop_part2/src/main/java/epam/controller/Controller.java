@@ -1,6 +1,4 @@
-package epam.Controller;
-
-import java.util.Map;
+package epam.controller;
 
 /**
  * Controller creating for class ControllerImpl.
@@ -10,7 +8,7 @@ import java.util.Map;
 public interface Controller {
 
     void showPlayers();
-    void addPlayers(int key, String name);
+    void addPlayers(String name);
     int getList();
     void animate_roll() throws InterruptedException;
     int roll();

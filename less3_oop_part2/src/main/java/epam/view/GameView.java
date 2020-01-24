@@ -1,10 +1,8 @@
-package epam.View;
-
-import epam.Controller.Controller;
+package epam.view;
 
 import java.util.Scanner;
 
-public class GameView extends View implements Printable{
+public class GameView extends View{
 
 
     private boolean isGameStarted;
@@ -17,23 +15,19 @@ public class GameView extends View implements Printable{
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        print(controller.roll());
+        //print(controller.roll());
         isGameStarted = true;
         controller.play(isGameStarted);
 
     }
 
 
-    @Override
-    public <T> void print(T t) {
-        System.out.println(t);
-    }
 
     private void toDo(String value) {
         System.out.println("Next move for " + value);
         System.out.println("Do you want to roll the dice?");
         if (new Scanner(System.in).next() == "y") {
-        //    controller.roll();
+            //    controller.roll();
         } else {
             System.out.println("Blabla");
         }

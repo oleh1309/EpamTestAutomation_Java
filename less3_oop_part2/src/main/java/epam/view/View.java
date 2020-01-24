@@ -1,7 +1,7 @@
-package epam.View;
+package epam.view;
 
-import epam.Controller.Controller;
-import epam.Controller.ControllerImpl;
+import epam.controller.Controller;
+import epam.controller.ControllerImpl;
 
 public class View {
 

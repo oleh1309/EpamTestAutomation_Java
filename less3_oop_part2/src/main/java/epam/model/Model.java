@@ -1,6 +1,4 @@
-package epam.Model;
-
-import java.util.Map;
+package epam.model;
 
 /**
  * Model creating for class BusinessLogic.
@@ -9,7 +7,7 @@ import java.util.Map;
 public interface Model {
 
     void showList();
-    void addPlayers(int key, String name);
+    void addPlayers(String name);
     int getList();
     void animate_roll() throws InterruptedException;
     int roll();

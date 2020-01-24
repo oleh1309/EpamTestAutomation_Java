@@ -1,4 +1,4 @@
-import epam.View.EnterNameView;
+import epam.view.EnterNameView;
 
 public class Application {
     public static void main(String[] args) {
