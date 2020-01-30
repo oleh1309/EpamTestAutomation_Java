@@ -8,8 +8,11 @@
         <outputRelativeToContentRoot value="true" />
         <module name="less3_oop_part2" />
         <module name="less3_oop_part1" />
-        <module name="less5_logging" />
         <module name="less4_exception" />
+        <module name="less6_collections_part2" />
+        <module name="less6_collections_part1" />
+        <module name="less5_logging" />
+        <module name="less7_generics" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

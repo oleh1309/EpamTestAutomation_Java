@@ -17,14 +17,7 @@ Configuration:
 
   Loggers:
     logger:
-      -
-        name: Game
-        level: debug
-        additivity: false
-        AppenderRef:
-            ref: STDOUT
-      -
-        name: Application
+        name: com.epam
         level: all
         additivity: false
         AppenderRef:

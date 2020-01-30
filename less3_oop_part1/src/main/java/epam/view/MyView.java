@@ -64,6 +64,7 @@ public class MyView {
    * PressButton1- print list of items.
    */
   private void pressButton1() {
+
     String keyMenu;
     do {
       System.out.println("\nKind of list:");
