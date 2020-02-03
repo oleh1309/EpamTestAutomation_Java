@@ -12,12 +12,11 @@ Configuration:
     Console:
       name: STDOUT
       PatternLayout:
-        Pattern: "%m%n"
-
+        Pattern: "%highlight{%-5level}{FATAL=bg_red} %style{%date{yyyy-MM-dd
+                   HH:mm:ss.SSS}}{blue} %class{1}:%L - %highlight{%msg} %xEx{short}%n"
 
   Loggers:
     logger:
-
         name: com.epam
         level: all
         additivity: false

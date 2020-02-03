@@ -13,9 +13,11 @@
         <module>less3_oop_part2</module>
         <module>less4_exception</module>
         <module>less5_logging</module>
-        <module>less6_collections</module>
+        <module>less6_collections_part1</module>
         <module>less6_collections_part2</module>
         <module>less7_generics</module>
+        <module>less8_collections_part3</module>
+        <module><![CDATA[less9_stream&lambda]]></module>
     </modules>
 
 

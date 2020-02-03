@@ -17,7 +17,6 @@ Configuration:
 
   Loggers:
     logger:
-
         name: com.epam
         level: all
         additivity: false
