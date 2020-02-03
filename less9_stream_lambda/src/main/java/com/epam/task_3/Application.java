@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.util.List;
 import java.util.Random;
+import java.util.Scanner;
 import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
@@ -14,11 +15,15 @@ public class Application {
 
     public static void main(String[] args) {
         addList();
-        calculateList(1);
-        calculateList(2);
-        calculateList(3);
-        calculateList(4);
-        calculateList(5);
+        int input = 0;
+        do{
+            input = new Scanner(System.in).nextInt();
+            if(input<1||input>5){
+                logger.error("Please use number from 1 to 5!!!");
+            }else {
+                calculateList(input);
+            }
+        }while (input!=5);
     }
 
     private static void addList(){
