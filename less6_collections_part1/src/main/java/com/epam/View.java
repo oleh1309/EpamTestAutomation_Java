@@ -24,8 +24,8 @@ public class View {
         menuBar = new LinkedHashMap<>();
         menuBar.put("1", "1  -  check Task 1");
         menuBar.put("2", "2  -  check Task 2");
-        menuBar.put("3", "3  -  Calculate all swiched on electrical applianse");
-        menuBar.put("4", "4  -  Calculate all swiched on electrical applianse");
+        menuBar.put("3", "3  -  check Task 3");
+        menuBar.put("4", "4  -  check Task 4");
         menuBar.put("Q", "Q  -  Exit");
         //sub menu
         menuSubBar = new LinkedHashMap<>();

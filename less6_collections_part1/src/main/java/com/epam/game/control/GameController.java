@@ -5,6 +5,8 @@ import com.epam.game.model.Hero;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.PriorityQueue;
+
 public class GameController implements Controller {
     private static final Logger logger = LogManager.getLogger(GameController.class);
     private Hero hero;
