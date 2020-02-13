@@ -1,4 +1,4 @@
-package com.epam.task_1;
+package com.epam.model;
 
 @FunctionalInterface
 public interface PrintInt {

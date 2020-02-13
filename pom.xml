@@ -17,8 +17,10 @@
         <module>less6_collections_part2</module>
         <module>less7_generics</module>
         <module>less8_collections_part3</module>
-        <module><![CDATA[less9_stream&lambda]]></module>
+        <module>less9_stream_lambda</module>
         <module>practies</module>
+        <module>less10_string_regex</module>
+        <module>less11_annotation_reflection</module>
     </modules>
 
 

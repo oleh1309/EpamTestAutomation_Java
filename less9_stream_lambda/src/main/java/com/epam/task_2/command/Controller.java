@@ -1,6 +1,5 @@
 package com.epam.task_2.command;
 
-import com.epam.task_1.Application;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

@@ -15,7 +15,7 @@ public class CustomBinaryTree<K, V> {
     public V put(K key, V value) {
 
         if (key == null) {
-            throw new NullPointerException();
+            throw new IllegalArgumentException();
         } else {
             keyList.add(key);
             //vList.add(getPosition(key),value);
@@ -34,7 +34,7 @@ public class CustomBinaryTree<K, V> {
     public V remove(K key) {
         V variable = get(key);
         if (getPosition(key) < 0) {
-            throw new NullPointerException();
+            throw new IllegalArgumentException();
         } else {
             //vList.remove(getPosition(key));
             removeFromArr(getPosition(key));
@@ -78,7 +78,7 @@ public class CustomBinaryTree<K, V> {
 
     private void addToArr(int index, V value) {
         if (index < 0) {
-            throw new NullPointerException();
+            throw new IllegalArgumentException();
         } else if (vList.length == 0) {
             vList = (V[]) new Object[1];
             vList[index] = value;
@@ -95,7 +95,7 @@ public class CustomBinaryTree<K, V> {
     private void removeFromArr(int index){
         Object[] temp = null;
         if (index < 0) {
-            throw new NullPointerException();
+            throw new IllegalArgumentException();
         }else {
             temp = (V[]) new Object[vList.length - 1];
             int pos = 0;

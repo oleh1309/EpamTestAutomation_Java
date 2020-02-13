@@ -1,6 +1,6 @@
-2020-01-23 10:49:39,610 TRACE com.epam.task_4.com.epam.task_1.Application [main] the built-in TRACE level
-2020-01-23 10:49:39,621 DEBUG com.epam.task_4.com.epam.task_1.Application [main] the built-in DEBUG level
-2020-01-23 10:49:39,621 INFO com.epam.task_4.com.epam.task_1.Application [main] the built-in INFO level
-2020-01-23 10:49:39,621 WARN com.epam.task_4.com.epam.task_1.Application [main] the built-in WARN level
-2020-01-23 10:49:39,621 ERROR com.epam.task_4.com.epam.task_1.Application [main] the built-in ERROR level
-2020-01-23 10:49:39,621 FATAL com.epam.task_4.com.epam.task_1.Application [main] the built-in FATAL level
+2020-01-23 10:49:39,610 TRACE com.epam.task_4.com.epam.model.com.epam.Application [main] the built-in TRACE level
+2020-01-23 10:49:39,621 DEBUG com.epam.task_4.com.epam.model.com.epam.Application [main] the built-in DEBUG level
+2020-01-23 10:49:39,621 INFO com.epam.task_4.com.epam.model.com.epam.Application [main] the built-in INFO level
+2020-01-23 10:49:39,621 WARN com.epam.task_4.com.epam.model.com.epam.Application [main] the built-in WARN level
+2020-01-23 10:49:39,621 ERROR com.epam.task_4.com.epam.model.com.epam.Application [main] the built-in ERROR level
+2020-01-23 10:49:39,621 FATAL com.epam.task_4.com.epam.model.com.epam.Application [main] the built-in FATAL level
