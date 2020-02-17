@@ -21,6 +21,7 @@
         <module>practies</module>
         <module>less10_string_regex</module>
         <module>less11_annotation_reflection</module>
+        <module>less12_io_nio</module>
     </modules>
 
 
