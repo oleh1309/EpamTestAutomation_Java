@@ -24,6 +24,7 @@
         <module>less12_io_nio</module>
         <module>less13_xml</module>
         <module>less14_json</module>
+        <module>less15_pattern</module>
     </modules>
 
 
