@@ -1,0 +1,63 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+           xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
+    <xs:element name="Planes">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Plane" type="planeType" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="planeType">
+        <xs:sequence>
+            <xs:element type="xs:string" name="model"/>
+            <xs:element type="xs:string" name="origin"/>
+            <xs:element name="chars">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="typeOfPlane">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="support plane"/>
+                                    <xs:enumeration value="escort"/>
+                                    <xs:enumeration value="fighter"/>
+                                    <xs:enumeration value="interceptor"/>
+                                    <xs:enumeration value="scout"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="numberOfSeats">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:int">
+                                    <xs:pattern value="[0-2]"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="combatKit" type="xs:boolean" maxOccurs="1"/>
+
+                        <xs:element name="rakets">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:int">
+                                    <xs:pattern value="[0-9]"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element type="xs:boolean" name="availabilityOfRadar"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="parameters">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:float" name="length"/>
+                        <xs:element type="xs:float" name="width"/>
+                        <xs:element type="xs:float" name="height"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element type="xs:byte" name="price"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string"/>
+    </xs:complexType>
+
+</xs:schema>

@@ -11,4 +11,10 @@ class Myclass {
      * Here is age for example 27
      */
     public int age
+
+            public void test()
+            {
+                System.out.print("//jsadhjdhf*/");
+                String s = "//*String*/"
+            }
 }

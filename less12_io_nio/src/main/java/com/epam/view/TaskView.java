@@ -17,6 +17,7 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
+
 public class TaskView {
     private static final Logger logger = LogManager.getLogger(TaskView.class);
     private Map<String, String> menu;
@@ -76,13 +77,36 @@ public class TaskView {
     }
 
     private void getReadingSourceCode() {
-        Services.readSourceCode();
+        try {
+            Services.readSourceCode();
+        } catch (FileNotFoundException e) {
+            logger.error(e);
+        }
     }
 
     private void getDirFromInput() {
         logger.info("Please enter the directory which you want to discover:");
-        File file = new File(new Scanner(System.in).nextLine());
-        Services.getDirectory(file, "");
+        String input = new Scanner(System.in).nextLine();
+        do {
+            String command = new Scanner(System.in).nextLine();
+            File file = new File(input);
+            if (command.equals("dir")) {
+                if (file.exists()) {
+                    Services.getDirectory(file);
+                } else {
+                    logger.error("Directory not exists! Try again!");
+                }
+            }else if(command.startsWith("cd")){
+                File file2 =
+                        new File(file.getAbsolutePath() +
+                                File.separator + command.substring(3));
+                if (!file2.isDirectory()) {
+                    logger.error(file2.getName());
+                } else if (file2.exists()) {
+                    Services.getDirectory(file2);
+                }
+            }
+        } while (!input.equals("exit"));
     }
 
     private void getCustomBufferClass() {
@@ -108,11 +132,7 @@ public class TaskView {
         } catch (IOException e) {
             logger.error(e);
         }
-        getCommunity(server1,client1);
-//        server1.write("Blalal");
-//        logger.info(client1.read());
-//        client1.write("Bioio");
-//        logger.info(server1.read());
+        getCommunity(server1, client1);
     }
 
     private void getCommunity(Server server, Client client) {
@@ -123,7 +143,7 @@ public class TaskView {
             if (!msg.equals("Q".toLowerCase())) {
                 server.write(msg);
                 client.read();
-            }else {
+            } else {
                 break;
             }
             logger.info("Write msg from client to server...");
@@ -131,7 +151,7 @@ public class TaskView {
             if (!msg.equals("Q".toLowerCase())) {
                 client.write(msg);
                 server.read();
-            }else{
+            } else {
                 break;
             }
         } while (!msg.equals("Q".toLowerCase()));
@@ -185,6 +205,5 @@ public class TaskView {
         logger.info("\nTime: [" +
                 stopWatch.getTime(TimeUnit.MILLISECONDS) + "]");
     }
-
 
 }

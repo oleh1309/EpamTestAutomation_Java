@@ -1,0 +1,36 @@
+[
+  {
+    "model": "RSD-15",
+    "origin": "USA",
+    "chars": {
+      "typeOfPlane": "support plane",
+      "numberOfSeats": 6,
+      "combatKit": false,
+      "rackets": 9,
+      "availabilityOfRadar": false
+    },
+    "parameters": {
+      "length": 10,
+      "width": 15,
+      "height": 3
+    },
+    "price": 50000
+  },
+  {
+    "model": "AH-204",
+    "origin": "UA",
+    "chars": {
+      "typeOfPlane": "support plane",
+      "numberOfSeats": 2,
+      "combatKit": true,
+      "rackets": 7,
+      "availabilityOfRadar": true
+    },
+    "parameters": {
+      "length": 8,
+      "width": 3,
+      "height": 4
+    },
+    "price": 30000
+  }
+]

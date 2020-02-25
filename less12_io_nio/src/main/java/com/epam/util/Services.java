@@ -1,12 +1,13 @@
 package com.epam.util;
 
-import com.epam.Application;
-import com.epam.model.Droids;
-import com.epam.model.Ship;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import java.io.*;
-import java.util.*;
+        import com.epam.Application;
+        import com.epam.model.Droids;
+        import com.epam.model.Ship;
+        import org.apache.logging.log4j.LogManager;
+        import org.apache.logging.log4j.Logger;
+
+        import java.io.*;
+        import java.util.*;
 
 public class Services {
     private static final Logger logger = LogManager.getLogger(Application.class);
@@ -103,50 +104,65 @@ public class Services {
         }
     }
 
-    public static void readSourceCode() {
+    public static void readSourceCode() throws FileNotFoundException {
         File paths = new File(Objects.requireNonNull(Services.class.getClassLoader()
                 .getResource("testFiles/test.java")).getFile());
-        BufferedReader br;
-        String curline;
-        try {
-            br = new BufferedReader(new FileReader(String.valueOf(paths)));
-
-            while ((curline = br.readLine()) != null) {
-                if (curline.contains("//")) {
-                    logger.info(curline.substring(curline.indexOf("//")));
-                }
-                if (curline.contains("/*")) {
-                    logger.info(curline.substring(curline.indexOf("/*")));
-                }
-                if (curline.contains("*")) {
-                    logger.info(curline.substring(curline.indexOf("*")));
-                }
-                System.out.println(curline);
+        Scanner scanner = new Scanner(new File(String.valueOf(paths)));
+        String substring;
+        while (scanner.hasNextLine()) {
+            substring = scanner.nextLine();
+            if (substring.contains("//")) {
+                logger.info(substring.substring(substring.indexOf("//")));
             }
-            br.close();
-        } catch (IOException e) {
-            e.printStackTrace();
+            if (substring.contains("/*")) {
+                logger.info(substring.substring(substring.indexOf("/*")));
+            } else if (substring.contains("*")) {
+                logger.info(substring.substring(substring.indexOf("*")));
+            }
         }
     }
 
-    public static void getDirectory(File dir,String path) {
+    public static void getDirectory(File dir) {
         File[] children = dir.listFiles();
-        if (children != null)  {
-            for (int i = 0; i < children.length; i++) {
-                if (children[i].isDirectory()) {
-                    path +="\\" + children[i].getName();
-                    getDirectory(children[i],path);
-                } else if (children[i].isDirectory() && (i < children.length - 1)) {
-                    path +="\\" + children[i].getName();
-                    getDirectory(children[i + 1],path);
-                } else {
-                    logger.info(path + children[i].getName());
-                }
+        for (File f : children) {
+            if (f.isDirectory()) {
+                logger.info("Folder " + f.getName());
+            } else {
+                logger.info("File" + f.getName());
             }
         }
     }
 
-    public static String getPath(String directionInResources ){
+    private static void runCommandLine(String path) {
+//        currentFile = new File(path);
+//        String s = readLineFromInput(currentFile);
+//        while (!s.equals("exit")) {
+//            if (s.equals("dir")) {
+//                displayAllContent(currentFile);
+//                s = readLineFromInput(currentFile);
+//            } else if (s.equals("cd..")) {
+//                currentFile = currentFile.getParentFile();
+//                s = readLineFromInput(currentFile);
+//            } else if (s.startsWith("cd")) {
+//                File file =
+//                        new File(currentFile.getAbsolutePath() +
+//                                File.separator + s.substring(3));
+//                if (!file.isDirectory()) {
+//                    logger.error("can not cd to : " + file.getName() + " try other name");
+//                } else if (file.exists()) {
+//                    currentFile = file;
+//                } else {
+//                    logger.error("Wrong name of Directory: " + s.substring(3));
+//                }
+//                s = readLineFromInput(currentFile);
+//            } else {
+//                logger.error("unsupported option: " + s);
+//                s = readLineFromInput(currentFile);
+//            }
+//        }
+    }
+
+    public static String getPath(String directionInResources) {
         return Services.class.getClassLoader().getResource(directionInResources).getPath();
     }
 }

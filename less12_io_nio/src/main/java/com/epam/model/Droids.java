@@ -5,13 +5,14 @@ import org.apache.commons.lang3.RandomStringUtils;
 import java.io.Serializable;
 import java.util.Random;
 
-public class Droids implements Serializable {
+public class Droids extends SuperDroid implements Serializable {
 
     private int power;
     private String name;
     private transient String id;
 
     public Droids(int power, String name) {
+        super(10);
         this.power = power;
         this.name = name;
         generateId();

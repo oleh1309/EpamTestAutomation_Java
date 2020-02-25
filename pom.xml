@@ -22,6 +22,8 @@
         <module>less10_string_regex</module>
         <module>less11_annotation_reflection</module>
         <module>less12_io_nio</module>
+        <module>less13_xml</module>
+        <module>less14_json</module>
     </modules>
 
 

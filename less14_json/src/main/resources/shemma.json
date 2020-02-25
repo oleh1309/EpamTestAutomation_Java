@@ -1,0 +1,160 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "array",
+  "title": "Planes",
+  "items": {
+    "$id": "#/items",
+    "type": "object",
+    "title": "Plane",
+    "required": [
+      "model",
+      "origin",
+      "chars",
+      "parameters",
+      "price"
+    ]
+  },
+  "properties": {
+    "model": {
+      "$id": "#/properties/model",
+      "type": "string",
+      "title": "The Model Schema",
+      "default": "",
+      "examples": [
+        "asd"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "origin": {
+      "$id": "#/properties/origin",
+      "type": "string",
+      "title": "The Origin Schema",
+      "default": "",
+      "examples": [
+        "sda"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "chars": {
+      "$id": "#/properties/chars",
+      "type": "object",
+      "title": "The Chars Schema",
+      "required": [
+        "typeOfPlane",
+        "numberOfSeats",
+        "combatKit",
+        "rakets",
+        "availabilityOfRadar"
+      ],
+      "properties": {
+        "typeOfPlane": {
+          "$id": "#/properties/chars/properties/typeOfPlane",
+          "type": "string",
+          "title": "The Typeofplane Schema",
+          "default": "",
+          "enum": [
+            "support plane",
+            "escort",
+            "fighter",
+            "interceptor",
+            "scout"
+          ]
+        },
+        "numberOfSeats": {
+          "$id": "#/properties/chars/properties/numberOfSeats",
+          "type": "integer",
+          "title": "The Numberofseats Schema",
+          "default": 0,
+          "pattern": "[0-1]"
+        },
+        "combatKit": {
+          "$id": "#/properties/chars/properties/combatKit",
+          "type": "boolean",
+          "title": "The Combatkit Schema",
+          "default": false,
+          "examples": [
+            true
+          ]
+        },
+        "rakets": {
+          "$id": "#/properties/chars/properties/rakets",
+          "type": "integer",
+          "title": "The Rakets Schema",
+          "default": 0,
+          "if": {
+            "properties": {
+              "combatKit": {
+                "const": false
+              }
+            }
+          },
+          "then": {
+            "pattern": "[0-10]"
+          },
+          "else": {
+            "pattern": "[0]"
+          }
+        }
+      },
+      "availabilityOfRadar": {
+        "$id": "#/properties/chars/properties/availabilityOfRadar",
+        "type": "boolean",
+        "title": "The Availabilityofradar Schema",
+        "default": false,
+        "examples": [
+          true
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "$id": "#/properties/parameters",
+    "type": "object",
+    "title": "The Parameters Schema",
+    "required": [
+      "length",
+      "width",
+      "height"
+    ],
+    "properties": {
+      "length": {
+        "$id": "#/properties/parameters/properties/length",
+        "type": "integer",
+        "title": "The Length Schema",
+        "default": 0,
+        "examples": [
+          1
+        ]
+      },
+      "width": {
+        "$id": "#/properties/parameters/properties/width",
+        "type": "integer",
+        "title": "The Width Schema",
+        "default": 0,
+        "examples": [
+          3
+        ]
+      },
+      "height": {
+        "$id": "#/properties/parameters/properties/height",
+        "type": "integer",
+        "title": "The Height Schema",
+        "default": 0,
+        "examples": [
+          4
+        ]
+      }
+    }
+  },
+  "price": {
+    "$id": "#/properties/price",
+    "type": "integer",
+    "title": "The Price Schema",
+    "default": 0,
+    "examples": [
+      50
+    ]
+  }
+}

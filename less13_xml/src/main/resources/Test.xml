@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="Test.xsl"?>
+<Planes>
+
+    <Plane name="name1">
+        <model>qw</model>
+        <origin>wq</origin>
+        <chars>
+            <typeOfPlane>interceptor</typeOfPlane>
+            <numberOfSeats>1</numberOfSeats>
+            <combatKit>false</combatKit>
+            <rakets>1</rakets>
+            <availabilityOfRadar>false</availabilityOfRadar>
+        </chars>
+        <parameters>
+            <length>1</length>
+            <width>2</width>
+            <height>1</height>
+        </parameters>
+        <price>43</price>
+    </Plane>
+
+
+    <Plane name="name1">
+        <model>asd</model>
+        <origin>sda</origin>
+        <chars>
+            <typeOfPlane>scout</typeOfPlane>
+            <numberOfSeats>0</numberOfSeats>
+            <combatKit>true</combatKit>
+            <rakets>3</rakets>
+            <availabilityOfRadar>true</availabilityOfRadar>
+        </chars>
+        <parameters>
+            <length>1</length>
+            <width>2</width>
+            <height>3</height>
+        </parameters>
+        <price>1</price>
+    </Plane>
+
+</Planes>
+
