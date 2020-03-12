@@ -1,0 +1,36 @@
+Configuration:
+  status: warn
+  name: YAMLConfigTest
+  properties:
+    property:
+      name: test-yaml.log
+      value: logs
+  thresholdFilter:
+    level: all
+
+  appenders:
+    Console:
+    - name: STDOUT
+      PatternLayout:
+        Pattern: "%highlight{%-5level}{FATAL=bg_red} %style{%date{yyyy-MM-dd
+                   HH:mm:ss.SSS}}{blue} %class{1}:%L - %highlight{%msg} %xEx{short}%n"
+    - name: console
+      PatternLayout:
+        Pattern: "%m%n"
+
+  Loggers:
+
+    logger:
+        name: com.epam
+        level: all
+        additivity: false
+        AppenderRef:
+            ref: console
+
+
+    Root:
+      level: all
+      AppenderRef:
+        - ref: STDOUT
+        - ref: console
+

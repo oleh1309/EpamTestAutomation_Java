@@ -25,6 +25,8 @@
         <module>less13_xml</module>
         <module>less14_json</module>
         <module>less15_pattern</module>
+        <module>less16_jdbc</module>
+        <module>less17_project</module>
     </modules>
 
 
